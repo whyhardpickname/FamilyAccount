@@ -1,6 +1,6 @@
 /**
  * @author MarkChern
- * @create 2020/9/28 6:45
+ * @date 2020/9/28 6:45
  */
 public class PascalTriangle
 {

@@ -2,7 +2,7 @@ import java.util.Random;
 
 /**
  * @author MarkChern
- * @create 2020/9/29 7:16
+ * @date 2020/9/29 7:16
  */
 public class RandomArray
 {

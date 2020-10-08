@@ -1,6 +1,6 @@
 /**
  * @author MarkChern
- * @create 2020/9/28 6:31
+ * @date 2020/9/28 6:31
  */
 public class ArrayTraversal {
     public static void main(String[] args)

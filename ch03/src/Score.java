@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * @author MarkChern
- * @create 2020/9/23 7:19
+ * @date 2020/9/23 7:19
  */
 public class Score
 {
