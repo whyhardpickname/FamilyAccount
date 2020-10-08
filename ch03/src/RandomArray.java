@@ -16,7 +16,7 @@ public class RandomArray
         for (int i = 0; i < 6; i++)
         {
             Random random = new Random();
-            int n = i + random.nextInt(arr.length);
+            int n = i + random.nextInt(arr.length - i);
             int temp = arr[i];
             arr[i] = arr[n];
             arr[n] = temp;
