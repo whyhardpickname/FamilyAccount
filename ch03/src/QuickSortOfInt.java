@@ -8,36 +8,29 @@ public class QuickSortOfInt
     {
         quickSort(a, 0, a.length - 1);
     }
-    public static int quickSort(int[] a, int lo, int hi)
+    public static void quickSort(int[] a, int left, int right)
     {
-        if (lo >= hi)
+        if (left < right)
         {
-            return 0;
+            int pivot = partition(a, left, right);
+            quickSort(a, left, pivot - 1);
+            quickSort(a, pivot + 1, right);
         }
-        int mi = subSort(a, lo, hi);
-        quickSort(a, lo, mi - 1);
-        quickSort(a, mi + 1, hi);
-        return 0;
     }
-    public static int subSort(int[] a, int lo, int hi)
+    public static int partition(int[] a, int left, int right)
     {
-        int i = lo + 1;
-        int j = hi;
-        int pivot = a[lo];
-        while (i < j)
+        swap(a, left, right);
+        int store = left;
+        for (int i = left; i <= right - 1; i++)
         {
-            while (i < hi && a[i] <= pivot)
+            if (a[i] <= a[right])
             {
-                i++;
+                swap(a, i, store);
+                store++;
             }
-            while (j >= lo && a[j] > pivot)
-            {
-                j--;
-            }
-            swap(a, i, j);
         }
-        swap(a, lo, j);
-        return j;
+        swap(a, store, right);
+        return store;
     }
     public static void swap(int[] a, int i, int j)
     {
@@ -47,7 +40,7 @@ public class QuickSortOfInt
     }
     public static void main(String[] args)
     {
-        int[] a = {6, 5, 4, 3, 2, 1};
+        int[] a = {6, 5, 3, 1, 4, 2, 7};
         quickSort(a);
         for (int i : a)
         {
