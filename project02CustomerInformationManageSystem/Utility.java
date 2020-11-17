@@ -108,7 +108,6 @@ public class Utility
                     customers.get(i).getEmail());
         }
     }
-
     public static void removeCustomer(CustomerList customers, int index)
     {
         customers.remove(index);

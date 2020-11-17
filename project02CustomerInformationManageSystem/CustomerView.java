@@ -40,6 +40,16 @@ public class CustomerView
                     Utility.displayCustomers(customers);
                 }
             }
+            else if(option == 5)
+            {
+                Scanner in = new Scanner(System.in);
+                System.out.println("确定退出，请输入Y/y.");
+                String confirm = in.next();
+                if (confirm.compareTo("y") == 0 | confirm.compareTo("Y") == 0)
+                {
+                    System.exit(1);
+                }
+            }
         }
     }
 }
