@@ -74,7 +74,8 @@ public class Utility
         System.out.print("邮箱：");
         String email = in.nextLine();
 
-        customers.add(name, gender, Integer.parseInt(age), phoneNumber, email);
+        customers.add(name, gender, age, phoneNumber, email);
+
     }
 
     public static void setCustomer(CustomerList customers, int index)
@@ -91,7 +92,8 @@ public class Utility
         System.out.print("邮箱(" + customers.get(index).getEmail() + "): ");
         String email = in.nextLine();
 
-        customers.set(index, name, gender, Integer.parseInt(age), phoneNumber, email);
+        customers.set(index, name, gender, age, phoneNumber, email);
+
     }
 
     public static void  displayCustomers(CustomerList customers)
@@ -112,11 +114,20 @@ public class Utility
     {
         customers.remove(index);
     }
+
+    public static boolean isConfirmed()
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("确定，请输入Y/y.");
+        String confirm = in.next();
+        if (confirm.compareTo("y") == 0 | confirm.compareTo("Y") == 0)
+        {
+            return true;
+        }
+        return false;
+    }
     public static void main(String[] args)
     {
-        CustomerList customerList = new CustomerList();
-        customerList.add("张三", "男",28, "12345678911", "1234@11.com");
-        customerList.add("李四", "男",28, "123444798", "1234@11.com");
-        displayCustomers(customerList);
+
     }
 }

@@ -30,7 +30,10 @@ public class CustomerView
                 int index = Utility.readIndex(1, customers.size());
                 if (index != -1)
                 {
-                    Utility.removeCustomer(customers, index - 1);
+                    if (Utility.isConfirmed())
+                    {
+                        Utility.removeCustomer(customers, index - 1);
+                    }
                 }
             }
             else if (option == 4)
@@ -42,10 +45,7 @@ public class CustomerView
             }
             else if(option == 5)
             {
-                Scanner in = new Scanner(System.in);
-                System.out.println("确定退出，请输入Y/y.");
-                String confirm = in.next();
-                if (confirm.compareTo("y") == 0 | confirm.compareTo("Y") == 0)
+                if (Utility.isConfirmed())
                 {
                     System.exit(1);
                 }

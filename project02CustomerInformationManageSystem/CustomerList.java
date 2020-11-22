@@ -13,19 +13,48 @@ public class CustomerList
         customers = new ArrayList<>();
     }
 
-    public void add(String name, String gender, int age, String phoneNumber, String email)
+    public void add(String name, String gender, String age, String phoneNumber, String email)
     {
-        customers.add(new Customer(name, gender, age, phoneNumber, email));
+        try
+        {
+            customers.add(new Customer(name, gender, Integer.parseInt(age), phoneNumber, email));
+        }
+        catch (NumberFormatException e)
+        {
+            System.out.println("添加失败，客户年龄有误。");
+        }
     }
 
-    public void set(int index, String name, String gender, int age, String phoneNumber, String email)
+    public void set(int index, String name, String gender, String age, String phoneNumber, String email)
     {
         Customer customer = customers.get(index);
-        customer.setName(name);
-        customer.setGender(gender);
-        customer.setAge(age);
-        customer.setPhoneNumber(phoneNumber);
-        customer.setEmail(email);
+        System.out.println(name);
+        if (name.compareTo("") != 0)
+        {
+            customer.setName(name);
+        }
+        if (gender.compareTo("") != 0)
+        {
+            customer.setGender(gender);
+        }
+        if (age.compareTo("") != 0)
+        {
+            try
+            {
+                customer.setAge(Integer.parseInt(age));
+            } catch (NumberFormatException e)
+            {
+                System.out.println("age must be age.");
+            }
+        }
+        if (phoneNumber.compareTo("") != 0)
+        {
+            customer.setPhoneNumber(phoneNumber);
+        }
+        if (email.compareTo("") != 0)
+        {
+            customer.setEmail(email);
+        }
     }
 
     public void remove(int index)
