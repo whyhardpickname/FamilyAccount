@@ -30,3 +30,4 @@ class Son extends Father{
         System.out.println("Son.x = " + x);
     }
 }
+
