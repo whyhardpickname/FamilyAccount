@@ -1,0 +1,17 @@
+知识点：Object类的方法
+
+案例：
+
+​	1、声明三角形类，包含a,b,c三边
+
+​	（1）属性私有化，提供无参，有参构造，提供get/set
+
+​	（2）重写：toString()
+
+​	（3）重写：hashCode和equals方法
+
+​	（4）编写  public double getArea()：求面积方法
+
+​	（5）编写 public double getPiremeter()：求周长方法
+
+​	2、声明测试类，在测试类中创建两个三角形对象，调用以上方法进行测试
