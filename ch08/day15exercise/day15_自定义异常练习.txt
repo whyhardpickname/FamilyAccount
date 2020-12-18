@@ -1,25 +1,25 @@
-ʵ��  �쳣
-1�� дһ����ΪAccount����ģ���˻���������������ԣ��˺�id�����balance��������annualInterestRate�����������ʵķ���getMonthlyInterestRate()����������Ϣ�ķ���getMonthlyInterest()��ȡ���withdraw()������deposit()��
+实验  异常
+1、 写一个名为Account的类模拟账户。该类包括的属性：账号id，余额balance，年利率annualInterestRate；返回月利率的方法getMonthlyInterestRate()，返回月利息的方法getMonthlyInterest()，取款方法withdraw()，存款方法deposit()。
 
-Ҫ�󣺴���ȡ������׳��Զ����쳣����AccountException���̳�Exception
+要求：存款和取款方法，抛出自定义异常类型AccountException，继承Exception
 
-2��дһ���û��������Account�ࡣ���û������У�����һ���˺�Ϊ1122�����Ϊ20000��������4.5%��Account����ʹ��withdraw�������30000Ԫ������ӡ��
-��ʹ��withdraw�������2500Ԫ��ʹ��deposit�������3000Ԫ��Ȼ���ӡ�������ʣ�����Ϣ��
+2、写一个用户程序测试Account类。在用户程序中，创建一个账号为1122、余额为20000、年利率4.5%的Account对象。使用withdraw方法提款30000元，并打印余额。
+再使用withdraw方法提款2500元，使用deposit方法存款3000元，然后打印余额，月利率，年利息。
 
-��ʾ���ڲ���������try...catch�����쳣
+提示：在测试类中用try...catch处理异常
 
-3������Account���һ������CheckAccount������͸֧���˻������˻��ж���һ������overdraft������͸֧�޶��CheckAccount������дwithdraw���������㷨���£�
-�����ȡ����<=�˻�����
-������ֱ��ȡ��
-�����ȡ����>�˻���� + ��͸֧��ȣ�
-������ʾ�û�������͸֧����޶�
-����
-����������Ҫ͸֧�Ķ��
-�������˻�����޸�Ϊ0�������͸֧���	
+3、创建Account类的一个子类CheckAccount代表可透支的账户，该账户中定义一个属性overdraft代表可透支限额。在CheckAccount类中重写withdraw方法，其算法如下：
+如果（取款金额<=账户余额），
+　　可直接取款
+如果（取款金额>账户余额 + 可透支额度）
+　　提示用户超过可透支额的限额
+否则
+　　计算需要透支的额度
+　　将账户余额修改为0，冲减可透支金额	
 
-Ҫ��withdraw����Ҳ�׳��Զ����쳣����OutOfOverdraftException������AccountException�����ࡣ
+要求：withdraw方法也抛出自定义异常类型OutOfOverdraftException，它是AccountException的子类。
 
-Ҫ��дһ���û��������CheckAccount�ࡣ���û������У�����һ���˺�Ϊ1122�����Ϊ20000��������4.5%����͸֧�޶�Ϊ5000Ԫ��CheckAccount����
-ʹ��withdraw�������5000Ԫ������ӡ�˻����Ϳ�͸֧�
-��ʹ��withdraw�������18000Ԫ������ӡ�˻����Ϳ�͸֧�
-��ʹ��withdraw�������3000Ԫ������ӡ�˻����Ϳ�͸֧�
+要求：写一个用户程序测试CheckAccount类。在用户程序中，创建一个账号为1122、余额为20000、年利率4.5%，可透支限额为5000元的CheckAccount对象。
+使用withdraw方法提款5000元，并打印账户余额和可透支额。
+再使用withdraw方法提款18000元，并打印账户余额和可透支额。
+再使用withdraw方法提款3000元，并打印账户余额和可透支额。
