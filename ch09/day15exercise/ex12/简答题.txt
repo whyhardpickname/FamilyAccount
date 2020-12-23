@@ -1,0 +1,24 @@
+# 简答题
+
+问题：
+
+1. 请描述异常的继承体系
+  答：Throwable
+      Error     Exception
+                RunTimeException    Exception
+2. 请描述你对错误(Error)的理解
+  答：Error是由系统或硬件原因导致程序无法正常运行。该错误无法被java自身解决。
+3. 请描述你对异常(Exception的理解)
+  答：异常由运行时异常和编译异常组成，该错误可以被java自身解决。例如使用try-catch处理异常。
+4. 请描述你对运行时异常(RuntimeException)的理解
+  答：运行时异常编译器不做强制检查的要求，因此如果没有处理好，可能导致程序崩溃。
+5. throw与throws的区别
+  答：throw抛出异常对象，throws声明抛出异常的类型。
+6. 异常处理方式有几种,分别是什么?详细阐述每种方式对异常是如何处理的
+  答：一，使用try-catch处理异常。将可能出现异常的语句放入try语句块中，使用catch捕获可能出现的异常。
+     二，抛出异常，由调用者自行处理。使用throw 异常对象将可能出现的异常抛出。
+7. 请列举常见异常，并说明产生原因。
+   答：ArrayIndexOutOfBoundsException 下标越界
+      ArithmeticException   除零
+      InputMissMatchException 输入不匹配
+      FileNotFoundException 文件不存在或路径有误

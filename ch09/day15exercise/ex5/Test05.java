@@ -27,6 +27,9 @@ public class Test05
         }
     }
     /*
-
+    由于Throwable是IOEXception的父类,所以输出为
+    IOException
+    Throwable
+    finally
      */
 }
