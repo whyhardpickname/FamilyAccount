@@ -11,15 +11,28 @@ import domain.equipment.Equipment;
  */
 public class PC implements Equipment
 {
+    /**型号*/
     private String model;
+    /**显示屏*/
     private String display;
 
+    /**
+     * 构造一个指定型号和显示屏的台式电脑对象。
+     * @param model
+     *      型号
+     * @param display
+     *      显示屏
+     */
     public PC(String model, String display)
     {
         this.model = model;
         this.display = display;
     }
 
+    /**
+     * 返回该对象的型号和显示屏的字符串描述。
+     * @return 型号和显示屏的字符串描述。
+     */
     @Override
     public String getDescription()
     {

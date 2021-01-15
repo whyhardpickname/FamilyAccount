@@ -11,15 +11,28 @@ import domain.equipment.Equipment;
  */
 public class Printer implements Equipment
 {
+    /**打印机类型*/
     private String type;
+    /**打印机名字*/
     private String name;
 
+    /**
+     * 构造一个指定类型和名字的打印机对象
+     * @param type
+     *      类型
+     * @param name
+     *      名字
+     */
     public Printer(String type, String name)
     {
         this.type = type;
         this.name = name;
     }
 
+    /**
+     * 返回该对象的类型和名字和字符串描述。
+     * @return 类型和名字和字符串描述。
+     */
     @Override
     public String getDescription()
     {

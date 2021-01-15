@@ -19,12 +19,16 @@ public class Employee
     private double salary;
 
     /**
-     * 该方法是雇员类{@code Employee}的有参构造器。
+     * 构造一个指定身份证明，姓名，年龄和薪水的雇员对象。
      *
-     * @param id 雇员的身份证
-     * @param name 雇员的名字
-     * @param age 雇员的年龄
-     * @param salary 雇员的薪水
+     * @param id
+     *      雇员的身份证
+     * @param name
+     *      雇员的名字
+     * @param age
+     *      雇员的年龄
+     * @param salary
+     *      雇员的薪水
      */
     public Employee(int id, String name, int age, double salary)
     {

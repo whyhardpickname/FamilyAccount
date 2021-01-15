@@ -9,7 +9,10 @@ package servise;
  */
 public enum Status
 {
+    /**空闲*/
     FREE,
+    /**已加入开发团队*/
     BUSY,
+    /**正在休假*/
     VOCATION
 }
