@@ -19,24 +19,29 @@ package test14;
  * 1。notify，必须由锁对象（线程的监控器对象）来调用。
  *
  * notify的作用是唤醒一个正在等待的线程，必须与wait是同一个锁对象
+ * notifyAll唤醒所有正在等待的同一个监视器的线程，避免生产者与消费者同时处于等待。
  */
 public class Test14 {
     public static void main(String[] args) {
         WorkBeach workBeach = new WorkBeach();
-        Cook cook = new Cook("厨师", workBeach);
-        Waiter waiter = new Waiter("服务员", workBeach);
-        cook.start();
-        waiter.start();
+        Cook cook1 = new Cook("厨师1", workBeach);
+        Cook cook2 = new Cook("厨师2", workBeach);
+        Waiter waiter1 = new Waiter("服务员1", workBeach);
+        Waiter waiter2 = new Waiter("服务员2", workBeach);
+        cook1.start();
+        cook2.start();
+        waiter1.start();
+        waiter2.start();
     }
 }
 
 
 class WorkBeach {
     private int counter; //菜品的数目
-    private static final int max = 2; //菜品的最大数目
+    private static final int max = 1; //菜品的最大数目
 
     public synchronized void put() {
-        if (counter >= max) {
+        while (counter >= max) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -45,11 +50,11 @@ class WorkBeach {
         }
         counter++;
         System.out.println(Thread.currentThread().getName() + "放了一盘菜，剩余" + counter);
-        notify();
+        notifyAll();
     }
 
     public synchronized void take() {
-        if (counter <= 0) {
+        while (counter <= 0) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -58,7 +63,7 @@ class WorkBeach {
         }
         counter--;
         System.out.println(Thread.currentThread().getName() + "取了一盘菜，剩余" + counter);
-        notify();
+        notifyAll();
     }
 }
 
