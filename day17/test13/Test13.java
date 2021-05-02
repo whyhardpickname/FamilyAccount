@@ -2,7 +2,7 @@ package test13;
 
 /**
  * @author MarkChern
- * 死锁：线程互相持有对方想要的锁,导致程序卡住。
+ * 死锁：线程互相持有对方想要的锁。
  */
 public class Test13 {
     public static void main(String[] args) {
@@ -47,9 +47,9 @@ class Bang extends Thread {
 
     @Override
     public void run() {
-        synchronized (girl) {
+        synchronized (money) {
             System.out.println("要钱");
-            synchronized (money) {
+            synchronized (girl) {
                 System.out.println("放人");
             }
         }
