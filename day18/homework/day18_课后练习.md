@@ -131,6 +131,7 @@
 ## 第14题
 
 ```java
+public class Ex14 {
 	public static void main(String[] args) {
 		String str = new String("world");
 		char[] ch = new char[]{'h','e','l','l','o'};
@@ -146,11 +147,13 @@
 		arr[3] = 'd';
 		arr[4] = 'e';
 	}
+}
 ```
 
 ## 第15题
 
 ```java
+public class Ex15 {
 	public static void main(String[] args) {
 		Integer i1 = 128;
 		Integer i2 = 128;
@@ -160,11 +163,13 @@
 		System.out.println(i3 == i4);
 		System.out.println(i1 == i3);
 	}
+}
 ```
 
 ## 第16题
 
 ```java
+public class Ex16 {
 	public static void main(String[] args) {
 		double a = 2.0;
 		double b = 2.0;
@@ -174,6 +179,7 @@
 		System.out.println(c == d);
 		System.out.println(a == d);
 	}
+}
 ```
 
 ## 第17题
