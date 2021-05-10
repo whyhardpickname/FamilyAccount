@@ -32,4 +32,61 @@ public class SingleLinkedList {
     public int getSize() {
         return size;
     }
+
+    public Object[] toArray() {
+        Object[] arr = new Object[size];
+        Node iterator = head;
+        for (int i = 0; i < size; i++) {
+            //使用while最后一个数据会缺失
+            arr[i] = iterator.data;
+            iterator = iterator.next;
+        }
+        return arr;
+    }
+
+    /**
+     * 删除保存指定对象的第一个的节点。
+     * 如果不存在，返回false。
+     * @param o 指定对象
+     * @return true如果节点存在且被成功删除。
+     */
+    public boolean remove(Object o) {
+        Node last = null;
+        Node current = head;
+
+        if (o == null) {
+            for (int i = 0; i < size; i++) {
+                if (current.data == null) {
+                    //删除第一个结点
+                    if (current == head) {
+                        head = head.next;
+                    } else {
+                        last.next = current.next;
+                    }
+                    size--;
+                    return true;
+                } else {
+                    last = current;
+                    current = current.next;
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (o.equals(current.data)) {
+                    //删除第一个结点
+                    if (current == head) {
+                        head = head.next;
+                    } else {
+                        last.next = current.next;
+                    }
+                    size--;
+                    return true;
+                } else {
+                    last = current;
+                    current = current.next;
+                }
+            }
+        }
+        return false;
+    }
 }
