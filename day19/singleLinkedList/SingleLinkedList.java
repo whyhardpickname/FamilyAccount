@@ -89,4 +89,31 @@ public class SingleLinkedList {
         }
         return false;
     }
+
+    /**
+     * 返回指定对象在列表在对应数组的下标。如果没有，返回-1.
+     * @param o 指定对象
+     * @return 下标或-1
+     */
+    public int indexOf(Object o) {
+        Node current = head;
+
+        if (o == null) {
+            for (int i = 0; i < size; i++) {
+                if (current.data == null)
+                    return i;
+                else
+                    current = current.next;
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (o.equals(current.data))
+                    return i;
+                 else
+                    current = current.next;
+
+            }
+        }
+        return -1;
+    }
 }

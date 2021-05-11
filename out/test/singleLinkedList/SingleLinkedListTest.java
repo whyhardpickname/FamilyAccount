@@ -43,18 +43,25 @@ class SingleLinkedListTest {
 
     @Test
     void remove() {
-        assertEquals(true, list.remove("a"));
+        assertTrue(list.remove("a"));
         assertEquals(2, list.getSize());
         assertArrayEquals(new Object[]{"b", "c"}, list.toArray());
 
         list.add("d");
 
-        assertEquals(true, list.remove("c"));
+        assertTrue(list.remove("c"));
         assertEquals(2, list.getSize());
         assertArrayEquals(new Object[]{"b", "d"}, list.toArray());
 
         assertNotEquals(true, list.remove("c"));
         assertEquals(2, list.getSize());
         assertArrayEquals(new Object[]{"b", "d"}, list.toArray());
+    }
+
+    @Test
+    void indexOf() {
+        assertEquals(0, list.indexOf("a"));
+        assertEquals(2, list.indexOf("c"));
+        assertEquals(-1, list.indexOf("d"));
     }
 }
